@@ -1,8 +1,16 @@
 import React from 'react';
 
-import { FiPower } from 'react-icons/fi';
-import userEvent from '@testing-library/user-event';
-import { Container, Header, HeaderContent, Profile } from './styles';
+import { FiClock, FiPower } from 'react-icons/fi';
+import {
+  Container,
+  Header,
+  HeaderContent,
+  Profile,
+  Schedule,
+  Calendar,
+  Content,
+  NextAppointment,
+} from './styles';
 import logoImg from '../../assets/logo.svg';
 import { useAuth } from '../../hooks/auth';
 
@@ -26,6 +34,33 @@ const Dashboard: React.FC = () => {
           </button>
         </HeaderContent>
       </Header>
+
+      <Content>
+        <Schedule>
+          <h1>Horários agendados</h1>
+          <p>
+            <span>Hoje</span>
+            <span>Dia 06</span>
+            <span>Segunda-feira</span>
+          </p>
+
+          <NextAppointment>
+            <strong>Atendimento a seguir</strong>
+            <div>
+              <img
+                src="https://avatars2.githubusercontent.com/u/3511851?s=460&u=9b8f93fcf5617b0711a57d8514657a3c1a564786&v=4"
+                alt="Rod Andrade"
+              />
+              <strong>Rod Andrade</strong>
+              <span>
+                <FiClock />
+                08:00
+              </span>
+            </div>
+          </NextAppointment>
+        </Schedule>
+        <Calendar />
+      </Content>
     </Container>
   );
 };
